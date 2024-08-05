@@ -1,0 +1,47 @@
+/*declaring variable for list item hover color change*/
+/*mixin for list element styling*/
+/*mixin for animation transitions so they can be applied to li, a, and their hover effects*/
+nav {
+  margin: 0;
+  /*nesting elements in their html order starting with nav*/
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+nav ul li {
+  background: rgb(0, 0, 54);
+  color: white;
+  max-width: 100%;
+  width: 5em;
+  height: 2em;
+  margin-left: 0.5em;
+  transition: 0.15s;
+  transition-timing-function: ease-in-out;
+  list-style-type: none;
+  /*including list item traits and animation transition mixin*/
+  /*basic link styling/sizing consistently with list tags, and including animation transition mixin*/
+}
+nav ul li a {
+  transition: 0.15s;
+  transition-timing-function: ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  max-width: 100%;
+  height: 100%;
+}
+
+li:hover {
+  transition: 0.15s;
+  transition-timing-function: ease-in-out;
+  background: rgb(183, 198, 218);
+} /*shifting color to second color variable on hover, including mixin for animation transition*/
+a:hover {
+  transition: 0.15s;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.2);
+  color: black;
+} /*slightly scaling link text and shifting text color to black on hover, including mixin for animation transition*//*# sourceMappingURL=style.css.map */

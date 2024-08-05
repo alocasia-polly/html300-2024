@@ -1,0 +1,57 @@
+
+$second-color: rgb(183, 198, 218);
+/*declaring variable for list item hover color change*/
+
+@mixin theme($first-color: rgb(0, 0, 54)) {
+    background: $first-color;
+    color: white;
+    max-width: 100%;
+    width: 5em;
+    height: 2em;
+    margin-left: 0.5em;
+}/*mixin for list element styling*/
+
+@mixin anim {
+    transition: 0.15s;
+    transition-timing-function: ease-in-out;
+}/*mixin for animation transitions so they can be applied to li, a, and their hover effects*/
+
+nav {
+    margin: 0;
+    /*nesting elements in their html order starting with nav*/
+
+    ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+            @include theme;
+            @include anim;
+            list-style-type: none;
+            /*including list item traits and animation transition mixin*/
+
+            a {
+                @include anim;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                color: white;
+                max-width: 100%;
+                height: 100%;
+            }/*basic link styling/sizing consistently with list tags, and including animation transition mixin*/
+        }
+    }
+}
+
+li:hover {
+    @include anim;
+    background: $second-color;
+}/*shifting color to second color variable on hover, including mixin for animation transition*/
+
+a:hover {
+    @include anim;
+    transform: scale(1.2);
+    color: black;
+}/*slightly scaling link text and shifting text color to black on hover, including mixin for animation transition*/
+
